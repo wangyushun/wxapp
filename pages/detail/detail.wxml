@@ -1,0 +1,2 @@
+<!--pages/detail/detail.wxml-->
+<text>movieId={{movieId}},data from {{dataFrom}}</text>

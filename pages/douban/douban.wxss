@@ -1,0 +1,27 @@
+/* pages/douban.wxss */
+.container {
+  background-color: #fff;
+  align-items: center;
+}
+
+.movie-swiper {
+  height: 95vh;
+}
+
+.slide-image {
+  width: 100%;
+}
+
+
+.container-movie {
+  background-color: #ddd; 
+  height: 100%;
+  align-items: center;
+  margin: 30rpx;
+}
+
+.view-movie-info {
+  display: flex;
+  flex-direction: column;
+}
+

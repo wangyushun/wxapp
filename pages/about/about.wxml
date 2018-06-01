@@ -1,0 +1,12 @@
+<view class='container'>
+  <view class='view-about'>
+    <image class='about-logo' src='/images/icon/about.jpg'></image>
+    <text style='font-weight: bold; font-size: 60rpx;'>记日影电</text>
+  </view>
+  <view>
+    <text>发现好电影，进入美妙电影世界。</text>
+  </view>
+  <view class='view-movielines'>
+    <text>{{ movielines }}</text>
+  </view>
+</view>

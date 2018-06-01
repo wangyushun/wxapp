@@ -1,0 +1,27 @@
+.container {
+  background-color: #ddd;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30rpx;
+}
+
+.view-about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.about-logo {
+  width: 375rpx;
+  height: 375rpx;
+  border-radius: 50%;
+}
+
+.view-movielines {
+  text-indent: 2rem;
+}
+

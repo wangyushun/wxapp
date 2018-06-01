@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/movieDiary/movieDiary",
+    "pages/douban/douban",
+    "pages/about/about",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "记日影电",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "text": "电影日记",
+        "pagePath": "pages/movieDiary/movieDiary",
+        "iconPath": "images/icon/movieIcon.jpg",
+        "selectedIconPath": "images/icon/movieSelectedIcon.jpg"
+      },
+      {
+        "text": "豆瓣热门",
+        "backgroundColor": "#0f0",
+        "pagePath": "pages/douban/douban",
+        "iconPath": "images/icon/doubanIcon.jpg",
+        "selectedIconPath": "images/icon/doubanSelectedIcon.jpg"
+      },
+      {
+        "text": "关于",
+        "pagePath": "pages/about/about",
+        "iconPath": "images/icon/aboutIcon.jpg",
+        "selectedIconPath": "images/icon/aboutSelectedIcon.jpg"
+      }
+    ],
+    "color": "#000",
+    "selectedColor": "#0f0"
+  }
+}
