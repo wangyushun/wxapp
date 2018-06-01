@@ -1,27 +1,76 @@
 /* pages/douban.wxss */
 .container {
   background-color: #fff;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+
+text {
+  font-size:  25rpx;
 }
 
 .movie-swiper {
-  height: 95vh;
-}
-
-.slide-image {
+  background-color: #ddd;
   width: 100%;
-}
-
-
-.container-movie {
-  background-color: #ddd; 
-  height: 100%;
-  align-items: center;
-  margin: 30rpx;
-}
-
-.view-movie-info {
+  height: 500rpx;
   display: flex;
   flex-direction: column;
+  text-align: center;
+}
+
+.view-item {
+  padding-bottom: 30rpx;
+}
+
+.swiper-movie-info image {
+  width: 100%;
+  height: 400rpx;
+}
+
+.board-item .content .inner {
+  display: flex;
+  flex-direction: row;
+  height: 350rpx;
+  width: 900rpx;
+  
+}
+
+.movie-item {
+  padding-right: 10rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.movie-item text{
+  width: 150rpx;
+  overflow: hidden;/*超出部分隐藏*/
+  white-space: nowrap;/*不换行*/
+  text-overflow:ellipsis;/*超出部分文字以...显示*/
+}
+
+
+.board-item .content .inner image {
+  width: 150rpx;
+  height: 200rpx;
+}
+
+.inner {
+  margin-top: 20rpx;
+}
+
+.board-item{
+  padding-left: 10rpx;
+}
+
+.list-title {
+  height: 30rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.list-title image {
+  width: 30rpx;
+  height: 30rpx;
 }
 

@@ -1,20 +1,14 @@
 // pages/detail/detail.js
+// 获取全局应用程序实例对象
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    movie: 
-      {
-        mid: "1764796",
-        poster: "/images/icon/555.jpg",
-        name: "机器人瓦力",
-        score: "9.3",
-        director: "安德鲁·斯坦顿",
-        actor: " 本·贝尔特 / 艾丽莎·奈特 / 杰夫·格尔林 / 佛莱德·威拉特 / 西格妮·韦弗",
-        descrip: "阿大发发撒个谎搜嘎 64143641again噶"
-      }
+
   },
 
   /**
@@ -22,6 +16,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    
     this.setData({
       movieId: options.mid,
       dataFrom: options.datafrom
@@ -29,25 +24,27 @@ Page({
 
     var url = "";
     if (options.datafrom == "douban"){
-      //url = "https://api.douban.com/v2/movie/subject/";
-      url = "https://douban.uieee.com/";
+      url = "https://douban.uieee.com/v2/movie/subject/";
+      
     } else if (options.datafrom == "movieDiary"){
       url = "https://api.douban.com/v2/movie/subject/1764796";
     }
     url = url +  this.data.movieId; 
-
+    
+    var page = this;
+    wx.showLoading({
+      title: '拼了命的加载中...',
+    });
     wx.request({
       url: url, //接口地址
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
+      header: { 'content-type': 'json'}, // 默认值
       success: function (res) {
-        console.log(res.data)
         if (res.statusCode == 200){
-          this.setData({
+          page.setData({
             movie: res.data
           })
         }
+        wx.hideLoading();
       }
     })
   },

@@ -1,16 +1,37 @@
 <!--pages/detail/detail.wxml-->
 <view>
   <view class='container container-poster'>
-    <image src="{{movie.poster}}" class="movie-poster" width="355" height="150"/>
-    <text>{{movie.name}}</text>
+    <image src="{{movie.images.small}}" class="movie-poster" width="355" height="150"/>
+    <text>{{movie.title}}</text>
   </view>
-  <view class=' container text-context'>   
-    <text>评分： {{movie.score}}</text>
-    <text>导演： {{movie.director}}</text>
-    <text>主演： {{movie.actor}}</text>
+  <view class='container'> 
+    <view class='container text-context'>
+      <text>{{movie.year}}/<block wx:for="{{ movie.genres }}" wx:key="id"> {{ item }} </block></text>  
+      <text>评分：{{movie.rating.average}}</text>
+      <text>原名：{{movie.original_title}}</text>
+      <text>导演：<block wx:for="{{ movie.directors }}" wx:key="id"> {{ item.name }} </block></text>
+      <text>主演：<block wx:for="{{ movie.casts }}" wx:key="id"> {{ item.name }}</block></text>
+      <text>上映时间：{{movie.pubdates}}</text>
+      <text>片长：{{movie.durations}}</text>
+    </view>   
   </view>
   <view class='container'>
     <text>简介：</text>
-    <text class='text-context text-indent'>{{movie.descrip}}</text>
-  </view>   
+    <text class='text-context'>{{movie.summary}}</text>
+  </view> 
+  <view class='container'>
+    <text>影评：</text>
+    <block wx:for="{{ movie.popular_comments }}" wx:key="id">
+      <view class='comment-item'>
+        <view class='comment-author'>
+          <image src='{{item.author.avatar}}'></image>
+          <text class='author-name'>{{ item.author.name }}:</text>
+        </view> 
+        <view class='comment-content text-context'>
+          <text>{{ item.content }}</text>
+          <text>{{ item.created_at }}</text>
+        </view>      
+      </view>
+    </block>
+  </view>  
 </view>

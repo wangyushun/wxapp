@@ -1,22 +1,46 @@
 /* pages/detail/detail.wxss */
-.text-context {
-  font-size: 30rpx;
-}
-
 .container {
-  padding: 30rpx;
   display: flex;
   flex-direction: column;
+  padding: 30rpx;
 }
+
+.text-context {
+  font-size: 20rpx;
+  padding-left: 40rpx;
+}
+
 .container-poster {
   align-items: center;
 }
 
 .movie-poster {
-  width: 100%;
+  width: 50%;
 }
 
-.text-indent {
-  text-indent: 2rem;
+.movie-info {
+  padding-left: 40rpx;
+}
+
+.comment-item {
+  display: flex;
+  flex-direction: column;
+  font-size: 20rpx;
+  margin-top: 20rpx; 
+}
+
+.comment-author image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.comment-author text{
+  font-weight: bold; 
+}
+
+.comment-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 10rpx;
 }
 

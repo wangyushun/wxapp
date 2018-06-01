@@ -3,7 +3,8 @@
     "pages/movieDiary/movieDiary",
     "pages/douban/douban",
     "pages/about/about",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/list/list"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +21,7 @@
         "selectedIconPath": "images/icon/movieSelectedIcon.jpg"
       },
       {
-        "text": "豆瓣热门",
+        "text": "豆瓣榜单",
         "backgroundColor": "#0f0",
         "pagePath": "pages/douban/douban",
         "iconPath": "images/icon/doubanIcon.jpg",

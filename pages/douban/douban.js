@@ -1,32 +1,20 @@
 // pages/douban.js
+// 获取全局应用程序实例对象
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    movie_list: [
-      {
-        mid: "1764796",
-        poster: "/images/icon/555.jpg",
-        name: "机器人瓦力多好多好多好多好多好多好多好多好三个傻瓜",
-        score: "9.3",
-        descrip: "阿大发发撒个谎搜嘎 64143641again噶"
-      },
-      {
-        mid: "2",
-        poster: "/images/icon/666.jpg",
-        name: "小黄人",
-        score: "9.3",
-        descrip: "阿大发发撒个谎搜嘎 64143641again噶"
-      },
-      {
-        mid: "3",
-        poster: "/images/icon/555.jpg",
-        name: "冰河世纪",
-        score: "9.3",
-        descrip: "阿大发发撒个谎搜嘎 64143641again噶"
-      }
+    boards: [
+      { key: 'in_theaters',datatype: 1},
+      { key: 'coming_soon',datatype: 1},
+      { key: 'new_movies', datatype: 1},
+      //{ key: 'top250', ,datatype: 1},
+      { key: 'weekly', datatype: 2},
+      // { key: 'us_box' }
     ]
   },
 
@@ -34,7 +22,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.showLoading({ title: '拼命加载中...' })
+    const tasks = this.data.boards.map(board => {
+      return app.douban.find(board.key, 1, 8)
+        .then(d => {
+          board.title = d.title
+          board.movies = d.subjects;
+          return board
+        })
+    })
+
+    Promise.all(tasks).then(boards => {
+      this.setData({ boards: boards, loading: false })
+      wx.hideLoading()
+    })
   },
 
   /**
@@ -62,7 +63,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    
   },
 
   /**
@@ -94,5 +95,13 @@ Page({
     wx.navigateTo({
       url: '/pages/detail/detail?datafrom=douban&mid=' + movieId,
     });
-  }
+  },
+
 })
+
+
+
+
+
+
+
