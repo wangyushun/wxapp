@@ -1,1 +1,22 @@
 /* pages/detail/detail.wxss */
+.text-context {
+  font-size: 30rpx;
+}
+
+.container {
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+}
+.container-poster {
+  align-items: center;
+}
+
+.movie-poster {
+  width: 100%;
+}
+
+.text-indent {
+  text-indent: 2rem;
+}
+

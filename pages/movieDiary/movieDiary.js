@@ -92,7 +92,7 @@ Page({
   onClickedMovie: function (event) {
     var movieId = event.currentTarget.dataset.movieId;
     wx.navigateTo({
-      url: '/pages/detail/detail?datafrom="movieDiary"&mid=' + movieId,
+      url: '/pages/detail/detail?datafrom=movieDiary&mid=' + movieId,
     });
   }
 })

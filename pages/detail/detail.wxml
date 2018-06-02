@@ -1,2 +1,16 @@
 <!--pages/detail/detail.wxml-->
-<text>movieId={{movieId}},data from {{dataFrom}}</text>
+<view>
+  <view class='container container-poster'>
+    <image src="{{movie.poster}}" class="movie-poster" width="355" height="150"/>
+    <text>{{movie.name}}</text>
+  </view>
+  <view class=' container text-context'>   
+    <text>评分： {{movie.score}}</text>
+    <text>导演： {{movie.director}}</text>
+    <text>主演： {{movie.actor}}</text>
+  </view>
+  <view class='container'>
+    <text>简介：</text>
+    <text class='text-context text-indent'>{{movie.descrip}}</text>
+  </view>   
+</view>

@@ -7,7 +7,7 @@ Page({
   data: {
     movie_list: [
       {
-        mid: "1",
+        mid: "1764796",
         poster: "/images/icon/555.jpg",
         name: "机器人瓦力多好多好多好多好多好多好多好多好三个傻瓜",
         score: "9.3",
@@ -92,7 +92,7 @@ Page({
   onClickedMovie: function (event) {
     var movieId = event.currentTarget.dataset.movieId;
     wx.navigateTo({
-      url: '/pages/detail/detail?datafrom="douban"&mid=' + movieId,
+      url: '/pages/detail/detail?datafrom=douban&mid=' + movieId,
     });
   }
 })
