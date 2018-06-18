@@ -1,17 +1,5 @@
 <!--pages/movieDiary/movieDiary.wxml-->
-<view class="container">
-  <swiper class='movie-swiper' indicator-dots="True" vertica="True" previous-margin="100rpx" next-margin="100rpx" display-multiple-items="1">
-    <swiper-item wx:for="{{movie_list}}" wx:key="*this" >
-      <view class='container-movie' bindtap='onClickedMovie' data-movie-id="{{item.mid}}">
-       <view class='view-movie-info'>
-        <image src="{{item.poster}}" class="slide-image" width="355" height="150"/>
-        <text>{{item.name}}</text>
-        <text>豆瓣： {{item.score}}</text>
-       </view>
-       <view>
-        <text>点评： {{item.descrip}}</text>
-       </view>      
-      </view>
-    </swiper-item>
-</swiper>
+<view class="container">   
+  <image src="/images/icon/666.jpg" class="slide-image"/>
+  <text>电影日记  域名未备案  无法获取数据  豆瓣电影可以查看</text>
 </view>

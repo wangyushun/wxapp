@@ -1,10 +1,11 @@
 /* pages/movieDiary/movieDiary.wxss */
 .container {
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-}
-
-.movie-swiper {
+  padding: 30rpx;
   height: 95vh;
 }
 
@@ -13,14 +14,3 @@
 }
 
 
-.container-movie {
-  background-color: #ddd; 
-  height: 100%;
-  align-items: center;
-  margin: 30rpx;
-}
-
-.view-movie-info {
-  display: flex;
-  flex-direction: column;
-}

@@ -34,7 +34,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    // wx.showLoading({ title: '拼命加载中...' })
+    // wx.request({
+    //   url: 'http://wangyushun.pythonanywhere.com/api/movies', //接口地址
+    //   header: { 'content-type': 'json' }, // 默认值
+    //   success: function (res) {
+    //     if (res.statusCode == 200) {
+    //       page.setData({
+    //         movie: res.data
+    //       })
+    //     }
+    //     wx.hideLoading();
+    //   }
+    // })
   },
 
   /**
@@ -62,7 +74,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
   },
 
   /**

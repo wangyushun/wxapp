@@ -3,7 +3,7 @@
   <view class='view-item'>
     <swiper class='movie-swiper' indicator-dots="True"  autoplay='true' interval='5000'  display-multiple-items="1">
       <swiper-item class='swiper-movie-info' bindtap='onClickedMovie' data-movie-id="{{item.id}}" wx:for="{{ boards[0].movies}}" wx:key="key">
-          <image src="{{item.images.small}}" class="movie-image" mode="aspectFill"/>
+          <image src="{{item.images.large}}" class="movie-image" mode="aspectFill"/>
           <text>{{item.title}}</text>  
       </swiper-item>
     </swiper>
@@ -11,7 +11,7 @@
   <view class='view-item'>
     <block wx:for="{{ boards }}" wx:key="key">
       <view class="board-item">
-        <navigator  url="/pages/list/list?type={{ item.key }}&title={{ item.title }}" hover-class="none">
+        <navigator  hover-class="none">
           <view class="list-title">
             <text>{{ item.title }}</text>
             <image src="/images/icon/arrowright.png" mode="aspectFill"/>
@@ -30,7 +30,8 @@
               <view class="movie-item" wx:for="{{ item.movies }}" wx:key="id" bindtap="onClickedMovie" data-movie-id="{{item.subject.id}}">
                 <image class='movie-image' src="{{ item.subject.images.small }}" mode="aspectFill"/>
                 <text>{{ item.subject.title }}</text>
-                <text>评分：{{ item.subject.rating.average }}</text>
+                <text wx:if="{{ int(item.subject.rating.average) > 8 }}" >评分：{{ item.subject.rating.average }}</text>
+                <text wx:else>评分：暂无</text>
               </view>
             </block>
           </view>

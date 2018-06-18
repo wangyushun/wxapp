@@ -6,7 +6,7 @@
 }
 
 .text-context {
-  font-size: 20rpx;
+  font-size: 25rpx;
   padding-left: 40rpx;
 }
 

@@ -4,6 +4,8 @@
  */
 const douban = require('./js/douban.js')
 
+
+
 App({
   /**
    * Global shared
