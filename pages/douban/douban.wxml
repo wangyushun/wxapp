@@ -23,14 +23,16 @@
               <view class="movie-item" wx:for="{{ item.movies }}" wx:key="id" bindtap="onClickedMovie" data-movie-id="{{item.id}}">
                 <image class='movie-image' src="{{ item.images.small }}" mode="aspectFill"/>
                 <text>{{ item.title }}</text>
-                <text>评分：{{ item.rating.average }}</text>
+                <!-- <text>评分：{{ item.rating.average }}</text> -->
+                <text wx:if="{{ item.rating.average > 0 }}" >评分：{{ item.rating.average }}</text>
+                <text wx:else>评分：暂无</text>
               </view>
             </block>
             <block wx:if="{{item.datatype == 2}}">
               <view class="movie-item" wx:for="{{ item.movies }}" wx:key="id" bindtap="onClickedMovie" data-movie-id="{{item.subject.id}}">
                 <image class='movie-image' src="{{ item.subject.images.small }}" mode="aspectFill"/>
                 <text>{{ item.subject.title }}</text>
-                <text wx:if="{{ int(item.subject.rating.average) > 8 }}" >评分：{{ item.subject.rating.average }}</text>
+                <text wx:if="{{ item.subject.rating.average > 0 }}" >评分：{{ item.subject.rating.average }}</text>
                 <text wx:else>评分：暂无</text>
               </view>
             </block>
